@@ -1,15 +1,46 @@
-<html ng-app>
+<html ng-app="pokemoApp">
     <head>
         <title>Demo MP</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>                        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="pokemonControllers.js"></script>
     </head>
     <body>
-        <div id="demo">
-            <h1>Demo angular</h1>
-            <input type="text" ng-model="simpleModel" placeholder="Hola mundo" />
-            <h1>{{simpleModel}}</h1>
+
+
+        <div id="search" ng-controller="searchController">
+            <h1>Search for a pokeman</h1>
+            <input type="text" ng-model="name" placeholder="the pokeman name" />
+            <button type="button" ng-click="searchPokemon()">Search</button>
+            <div id="search-results" ng-show="searchResult.name">
+                <div>
+                    <h1>name: {{searchResult.name}}</h1>
+                </div>
+
+                <div>
+                    <label>weight:</label> {{searchResult.weight}}
+                </div>
+                <div>
+                    <label>height:</label> {{searchResult.height}}
+                </div>
+                <div>
+                    <label>base_experience:</label> {{searchResult.base_experience}}
+                </div>
+                <div>
+                    <h2>Categories</h2>
+                    <ul ng-repeat="type in searchResult.types">
+                        <li><label>{{type.type.name}}</label> </li>
+                    </ul>
+                </div>
+            </div>
+            
+
         </div>
+
+
+
     </body>
 </html>

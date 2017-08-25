@@ -11,3 +11,16 @@ function loadWars() {
   xhttp.open("GET", "https://swapi.co/api/people/2/?format=json", true);
   xhttp.send();
 }
+
+// gets a pokemon detail
+var URL='http://pokeapi.co/api/v2/';
+function findPokemon(){
+    //http://pokeapi.co/api/v2/pokemon/charizard/
+    
+}
+
+function getPokemonCategories(){
+    //api/v2/characteristic/{id}
+    
+}
+
